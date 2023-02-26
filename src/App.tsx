@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 import Pokemon from './models/pokemon';
 import POKEMONS from './models/mock-pokemon';
 
@@ -8,6 +8,11 @@ const App: FunctionComponent = () => {
   // Cette fonction retourne une paire de deux éléments :
   // l'état actuel ('name')
   // et une fonction pour modifier la valeur de cet état ('setName()').
+  
+  useEffect(() => {
+    setPokemons(POKEMONS);
+  }, []);
+  
   return (
     <div>
       <h1>Pokédex</h1>
@@ -64,4 +69,20 @@ export default App;
  * par React : il est détruit lorsqu'il est retiré du DOM ...
  * En terme React, cette étape est appelé le DEMONTAGE.
  * ---
+ */
+
+/**
+ * Essai d'un montage d'un useEffect()
+ * 
+ * - Initialiser le state avec un tableau vide : []
+ * --> Importation de useEffect()
+ * --> Initialisation du composant avec un tableau vide par défaut.
+ * --> On met en place le useState() qui prend 2 arguments :
+ * --> - une fonction setPokemons : on lui passe notre liste POKEMONS à afficher.
+ * --> - en 2ème argument, il y a un tableau vide pour éviter de déclencher
+ * --> le useEffect() à chaque modification du composant.
+ * 
+ * - Charger la liste POKEMONS à l'initialisation du composant.
+ * - Veiller àce que la liste des pokémons ne soit chargé dans
+ *  le state qu'une seule fois.
  */
