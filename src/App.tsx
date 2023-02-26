@@ -40,3 +40,28 @@ export default App;
  * Typer cet état afin qu'il ait un tableau de pokemons.
  * Afficher le nombre de pokemons présents dans l'état du composant.
  */
+
+/**
+ * ---
+ * METHODES DE CYCLE DE VIE :
+ * *****************************************************
+ * componentDidMouth()
+ * Méthode pour créer un composant lorsqu'il est inséré dans le DOM.
+ * Cela nous permet de mettre en place certaines instructions
+ * lors de l'initialisationdu composant, comme la récuparation
+ * de données depuis un serveur distant par exemple ...
+ * On parle de MONTAGE du composant en terme Reactjs.
+ * ******************************************************
+ * componentDidUpdate(prevProps, prevState)
+ * A chaque modification détectée, le composant est mis à jour.
+ * La méthode reçoit en paramètre 2 objets représentant les 'props'
+ * et le 'state' avant la mise à jour.
+ * Il y a opportunité de travailler sur le DOM une fois que le
+ * composant a été mis à jour.
+ * *******************************************************
+ * componentWillUnmount()
+ * Cette méthode est appelée juste avant que le composant est détruit
+ * par React : il est détruit lorsqu'il est retiré du DOM ...
+ * En terme React, cette étape est appelé le DEMONTAGE.
+ * ---
+ */
